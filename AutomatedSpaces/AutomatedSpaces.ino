@@ -19,8 +19,6 @@ int cikissay = 0;
 int sirakapasite = 25;
 int mekanicikapasite = 109;
 
-
-
 Servo myservo;
 int value;
 int secvalue;
@@ -31,15 +29,11 @@ float sensor=0;
 float celsius=0;
 float voltage=0;
 
-
-
-// initialize the library with the numbers of the interface pins
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 
 void setup() {
-  // set up the LCD's number of columns and rows:
-  lcd.begin(16, 2);
-  // Print a message to the LCD.
+
+  lcd.begin(16, 2);  
   
   Serial.begin(9600);
   
@@ -49,16 +43,12 @@ void setup() {
 void loop() {
   lcd.clear();
   
-
-
   int gazyogunluk = analogRead(gazpini);
   
   sensor=analogRead(0);
   voltage=sensor*5000/1024;
   voltage=voltage-500;
   celsius=voltage/50;
-  
-
   
   sirames = sensor1.dist();
   mekanicimes = sensor2.dist();
